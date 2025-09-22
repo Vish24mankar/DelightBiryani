@@ -3,15 +3,6 @@ import Header from './Component/Header';
 import Footer from './Component/Footer';
 import Home from './pages/Home';
 
-
-// Placeholder pages (create these later)
-import Menu from './pages/Menu';
-import Offers from './pages/Offers';
-import Cart from './pages/Cart';
-import Reservation from './pages/Reservation';
-import Login from './pages/Login';
-import Account from './pages/Account';
-
 function App() {
   return (
     <BrowserRouter>
