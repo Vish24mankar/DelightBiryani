@@ -1,6 +1,6 @@
-// No import needed for public folder images
+// ImagesPaths.js
 const ImagesPaths = {
-  logo: "/images/logoImg.png",
+  logoImg: "/assets/AllImges/logo.png",
 };
 
 export default ImagesPaths;
