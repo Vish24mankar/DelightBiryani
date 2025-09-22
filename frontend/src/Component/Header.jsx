@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 import { FaUtensils } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
-import './Header.css'; // custom styles here
 
 const Header = () => {
   const isLoggedIn = false; // Replace with actual login state
