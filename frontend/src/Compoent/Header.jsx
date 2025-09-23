@@ -23,7 +23,7 @@ const Header = () => {
   <div className="d-flex align-items-center flex-wrap mb-2 mb-md-0">
     <a className="d-flex align-items-center me-3 text-decoration-none" href="#">
       <img
-        src="/assets/AllImges/logoImg.png"
+        src={ImagesPaths.logoImg}
         alt="Logo"
         width={50}
         height={50}

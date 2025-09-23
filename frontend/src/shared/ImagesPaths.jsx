@@ -1,6 +1,7 @@
-// ImagesPaths.js
+// import logoImg from "../assets/AllImages/logo.png";
+
 const ImagesPaths = {
-  logoImg: "/assets/AllImges/logo.png",
+  logoImg: "/assets/AllImages/logo.png",
 };
 
 export default ImagesPaths;
