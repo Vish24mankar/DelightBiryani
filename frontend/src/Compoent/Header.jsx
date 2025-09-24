@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import React, { useState, useCallback } from "react";
 import ImagesPaths from "../shared/ImagesPaths";
 import {
@@ -8,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaUtensils } from "react-icons/fa6";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useNavigate } from "react-router-dom";
 
 const containerStyle = {
   width: "100%",
@@ -18,9 +20,14 @@ const containerStyle = {
 const defaultCenter = { lat: 19.076, lng: 72.8777 }; // Default location
 
 const Header = () => {
+  const [clicked, setClicked] = useState(false);
   const [showLocationModal, setShowLocationModal] = useState(false);
   const [activeTab, setActiveTab] = useState("delivery");
   const [markerPosition, setMarkerPosition] = useState(defaultCenter);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => setClicked(true);
 
   // Close modal on background click
   const handleOverlayClick = (e) => {
@@ -90,24 +97,47 @@ const Header = () => {
 
           {/* Right Side Links + Login */}
           <div className="d-flex flex-wrap align-items-center">
-            <a href="#" className="d-flex align-items-center text-secondary me-3">
+            <a
+              href="#"
+              className="d-flex align-items-center text-secondary me-3 text-decoration-none"
+              onClick={() => navigate("/search")}
+            >
               <FaSearch className="me-2" size={18} /> Search
             </a>
-            <a href="#" className="d-flex align-items-center text-secondary me-3">
+            <a
+              href="#"
+              className="d-flex align-items-center text-secondary me-3 text-decoration-none"
+            >
               <FaUtensils className="me-2" size={18} /> Menu
             </a>
-            <a href="#" className="d-flex align-items-center text-secondary me-3">
+            <a
+              href="#"
+              className="d-flex align-items-center text-secondary me-3 text-decoration-none"
+            >
               <FaRegCalendarAlt className="me-2" size={18} /> Book a Table
             </a>
-            <a href="#" className="d-flex align-items-center text-secondary me-3">
-              <FaWallet className="me-2" size={18} />
+            <a
+              href="#"
+              className="d-flex align-items-center text-secondary me-3"
+            >
+              <FaWallet className="me-2" size={18} style={{color: "#930035 "}} />
             </a>
 
             {/* Login Button */}
             <button
               type="button"
-              className="btn btn-outline-primary"
-              style={{ fontSize: "16px" }}
+              className="btn"
+              onClick={handleClick}
+              style={{
+                fontSize: "16px",
+                backgroundColor: "transparent",
+                color: clicked ? "#930035" : "black",
+                border: "2px solid #930035",
+                borderRadius: "5px",
+                padding: "6px 16px",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+              }}
             >
               Login
             </button>
